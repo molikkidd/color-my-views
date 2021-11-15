@@ -19,19 +19,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun setListeners() {
         binding.apply {
+            val clickableViews: List<View> =
+                listOf(
+                    boxOneText, boxTwoText, boxThreeText,
+                    boxFourText, boxFiveText, constraintLayout,
+                    greenButton, yellowButton, redButton,
+                )
             invalidateAll()
-            binding.box_one_text.text = binding.boxOneText.text
-            binding.box_two_text.text = binding.boxTwoText.text
-            binding.box_three_text.text = binding.boxThreeText.text
-            binding.box_four_text.text = binding.boxFourText.text
-            binding.box_five_text.text = binding.boxFiveText.text
-            binding.constraint_layout
+            for (item in clickableViews) {
+                item.setOnClickListener { makeColored(it)}
+            }
         }
 
 
-        for (item in clickableViews) {
-            item.setOnClickListener { makeColored(it)}
-        }
     }
 
     private fun makeColored(view: View) {
@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             R.id.box_three_text -> view.setBackgroundResource(android.R.color.holo_green_light)
             R.id.box_four_text -> view.setBackgroundResource(android.R.color.holo_green_dark)
             R.id.box_five_text -> view.setBackgroundResource(android.R.color.holo_green_light)
+//            R.id.green_button -> boxFiveText.setBackgroundResource(android.R.color.holo_green_light)
 
             else -> view.setBackgroundColor(Color.LTGRAY)
         }

@@ -4,8 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
     <data>
-
+        <variable
+            name="ColorMyViews"
+            type="com.example.colormyviews" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:id="@+id/constraint_layout"
@@ -88,10 +91,55 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/racing_sans_one"
-            android:text="TextView"
+            android:text="@string/how_to_play"
             android:textSize="24sp"
-            tools:layout_editor_absoluteX="18dp"
-            tools:layout_editor_absoluteY="354dp" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/info_text" />
+
+        <TextView
+            android:id="@+id/info_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tap_boxes_and_buttons"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/label_text"
+            app:layout_constraintTop_toBottomOf="@+id/box_five_text"
+            app:layout_constraintVertical_bias="0.203" />
+
+        <Button
+            android:id="@+id/red_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/red_button"
+            app:layout_constraintBaseline_toBaselineOf="@+id/yellow_button"
+            app:layout_constraintEnd_toStartOf="@+id/yellow_button"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/yellow_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="72dp"
+            android:text="@string/yellow_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/green_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/red_button" />
+
+        <Button
+            android:id="@+id/green_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/green_button"
+            app:layout_constraintBaseline_toBaselineOf="@+id/yellow_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/yellow_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
